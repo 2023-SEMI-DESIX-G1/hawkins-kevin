@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio #2</title>
+</head>
+<body>
+    <style>
+        body{
+            background: #292b2c;
+        }
+        .d-none{
+            display: none;
+        }
+
+        .box{
+            width: 97%;
+            padding: 10px;
+            margin: 20px;
+            background: #636363;
+            color: #fff;
+            font-size: 16px;
+            font-weight: normal;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        .btn{
+            margin: 10px;
+            padding: 10px 10px;
+            border: none;
+            cursor: pointer;
+            color: #ffff;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 5px;
+            background: #0275d8;
+        }
+
+        .btn:hover{
+            background: #1d94fc
+        }
+    </style>
+    <div class="box">
+        <h3>Laboratorio #2</h3>
+        <p>¿Qué es JavaScript y en qué se asemeja a Java? 
+            <br><br>
+            JavaScript es un lenguaje de programación el cual nos permite crear contenidos dinámicos e implementar funciones complejas en páginas web.
+            JavaScript se caracteriza por ser ligero y por permitir crear interacciones más dinámicas al desarrollar páginas web, aplicaciones, servidores e incluso juegos.
+            <br><br>
+            Java y JavaScript a pesar de ser lenguajes diferentes, poseen ciertas similitudes entre ellas se pueden mencionar que en ambos lenguajes se puede realizar la declaración de variables utilizando la palabra clave ra o let, en ambos lenguajes se pueden usar las condicionales if y ese para contralar los flujos de ejecución del programa, en ambos lenguajes se pueden definir funciones para agrupar bloques de código y en ambos lenguajes se pueden utilizar los bucles for y while para repetir bloques de código.
+        </p>
+
+        <button class="btn" onclick="operations()">Realizar operaciones</button>
+        <button class="btn" onclick="concat()">Realizar concatenación</button>
+        <button class="btn" onclick="multiplos()">Mutiplos de un número</button>
+    </div>
+
+    <div id="show" class="box d-none">
+        <ul>
+            <li id="suma"></li>
+            <li id="resta"></li>
+            <li id="multipli"></li>
+            <li id="division"></li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <p id="words"></p>
+        <p id="words-2"></p>
+    </div>
+
+    <div class="box">
+        <p id="end"></p>
+    </div>
+    <script>
+        var num_1, num_2;
+
+        function operations(){
+            num_1 = window.prompt('Ingrese un número');
+            num_1 = parseInt(num_1)
+            num_2 = window.prompt('Ingrese otro número');
+            num_2 = parseInt(num_2)
+            document.getElementById("suma").innerHTML = `El resultado de la suma entre ${num_1} y ${num_2} es: ${num_1 + num_2}`;
+            document.getElementById("resta").innerHTML = `El resultado de la resta entre ${num_1} y ${num_2} es: ${num_1 - num_2}`;
+            document.getElementById("multipli").innerHTML = `El resultado de la multiplicación entre ${num_1} y ${num_2} es: ${num_1 * num_2}`;
+            document.getElementById("division").innerHTML = `El resultado de la división entre ${num_1} y ${num_2} es: ${num_1 / num_2}`;
+            console.log('El resultado de la suma es: ', num_1 + num_2 , ' El resultado de la resta es: ', num_1 - num_2, ' El resultado de la multiplicación es : ', num_1 * num_2, ' y el resultado de la división es : ', num_1 / num_2);
+            document.getElementById('show').classList.remove('d-none')
+        }
+
+
+        function concat(){
+            let word_1 = window.prompt('Ingrese una palabra');
+            let word_2 = window.prompt('Ingrese otra palabra');
+            document.getElementById("words").innerHTML = `Las palabras ingresadas son ${word_1} ${word_2}`;
+        }
+
+        const className = 'Desarrollo de Software';
+        const classNum = 9;
+        document.getElementById("words-2").innerHTML = `La constante número uno es de tipo:  ${typeof className} y la constante dos es de tipo:  ${typeof classNum}`;
+
+
+        const global = {
+        numero: 100,
+        cadena: "Variable tipo Objeto",
+        booleano: true,
+        objeto: {}
+        };
+
+
+        console.log('VARIABLE GLOBAL', global);
+
+        function multiplos() {
+            let valor =  window.prompt('Ingrese un número');
+            valor = parseInt(valor);
+
+            let suma = 0;
+            for (let i = 1; i < valor; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    suma += i;
+                }
+            }
+            
+            document.getElementById("end").innerHTML = `La suma de los múltiplos:  ${suma}`;
+        }
+
+
+    </script>
+</body>
+</html>
