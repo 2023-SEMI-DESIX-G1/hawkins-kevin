@@ -7,11 +7,58 @@
     <title>Laboratorio 5</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <section class="container" id="container">
-        
-    </section>
+    <div class="container" id="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="https://c8.alamy.com/comp/2C15XB0/male-student-icon-2C15XB0.jpg" alt="profile_picture">
+                <p style="margin: 1rem;">Estudiante</p>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a href="index.html" class="active">
+                            <span class="item">Inicio</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dashboard">
+            <div class="title">
+                <h3 style="font-size: 30px; font-weight: 500; padding: 1rem 0;">Bienvenido</h3>
+            </div>
+            <div class="wrap">
+                <div class="card">
+                    <form action="" id="grades-form">
+                        <div class="card-header">
+                            <button type="submit" id="add-btn">
+                                <i class="fa-sharp fa-solid fa-plus"></i>
+                                <span>Nueva nota</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-box" id="input-box">
+                                <label for="quantity" class="">Ingrese una nota:</label>
+                            </div>
+                        </div>
+                        <div class="card-footer hidden" id="average">
+                            <button type="submit" id="calculate">
+                                <span>Calcular promedio</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="graphic">
+                    <h4 id="result"></h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
