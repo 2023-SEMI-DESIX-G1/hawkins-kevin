@@ -1,5 +1,6 @@
 (()=> {
     var inputCount = 0;
+    var inputKeys = [];
     const App = {
         htmlElements: {
             addBtn: document.getElementById("add-btn"),
@@ -38,7 +39,10 @@
                 newInput.type = "number";
                 newInput.name = "input" + inputCount;
                 container.appendChild(newInput);
-                container.appendChild(document.createElement("br"));
+                newInput.classList.add('mx-2');
+                var name = 'Nota ' + inputCount;
+                inputKeys.push(name);
+                console.log('LABELS: ', inputKeys)
             },
 
             calculateAverage(event){
@@ -47,19 +51,47 @@
                 var inputValues = [];
                 var inputSum = 0;
                 var totalAverage;
-                
                 for (var i = 0; i < inputs.length; i++) {
                   var input = inputs[i];
                   if (input.type !== "submit") {
-                    inputValues.push(input.value)
+                    inputValues.push(Number(input.value))
                     inputSum = inputSum + Number(input.value);
                   }
                 }
                 totalAverage = inputSum / inputValues.length;
                 console.log('SUMA', inputSum);
+                console.log('LISTA: ', inputValues);
                 console.log('PROMEDIO: ', totalAverage.toFixed(2));
                 var result = document.getElementById("result");
                 result.innerHTML = `Promedio de notas = ${totalAverage.toFixed(2)}`
+
+
+                var data = {
+                    labels: inputKeys,
+                    datasets: [{
+                      label: "Grafica de notas",
+                      data: inputValues,
+                      backgroundColor: "rgba(0, 123, 255, 0.5)", // Bar color
+                      borderColor: "rgba(0, 123, 255, 1)", // Border color
+                      borderWidth: 1 // Border width in pixels
+                    }]
+                };
+
+                var options = {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                };
+
+                var ctx = document.getElementById("graphic").getContext("2d");
+                var myChart = new Chart(ctx, {
+                    type: "bar",
+                    data: data,
+                    options: options
+                });
 
             }
 

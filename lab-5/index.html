@@ -7,6 +7,7 @@
     <title>Laboratorio 5</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -40,9 +41,8 @@
                             </button>
                         </div>
                         <div class="card-body">
-                            <div class="input-box" id="input-box">
-                                <label for="quantity" class="">Ingrese una nota:</label>
-                            </div>
+                            <label for="quantity" class="">Ingrese una nota:</label>
+                            <div class="input-box" id="input-box"></div>
                         </div>
                         <div class="card-footer hidden" id="average">
                             <button type="submit" id="calculate">
@@ -53,8 +53,8 @@
                 </div>
 
                 <div class="graphic">
-                    <h4 id="result"></h4>
-                    
+                    <canvas id="graphic" width="500" height="120"></canvas>
+                    <h4 style="margin-top: 1.5rem;" id="result"></h4>
                 </div>
             </div>
         </div>

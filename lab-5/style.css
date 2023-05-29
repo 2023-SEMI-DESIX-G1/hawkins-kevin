@@ -23,9 +23,10 @@ body{
     border-radius: 5px;
     box-sizing: border-box;
     width: 86%;
-    margin: 0 1rem;
+    margin: 1rem 1rem;
     position: fixed;
     left: 225px;
+    overflow-x: auto;
 }
 
 .wrap{
@@ -120,8 +121,8 @@ body{
 
 .card-body input {
     margin: 1rem 0;
+    margin-right: 0.5rem;
     padding: 0.5rem 0.5rem;
-    width: 300px;
     border: 1px solid grey;
     border-radius: 5px;
 }
@@ -147,7 +148,7 @@ body{
 
 
 .input-box {
-    margin: 1rem 0;
+    display: flex;
 }
 
 .graphic {
