@@ -28,18 +28,18 @@
             </div>
         </div>
         <div class="dashboard">
-            <div class="title">
-                <h3 style="font-size: 30px; font-weight: 500; padding: 1rem 0;">Bienvenido</h3>
-            </div>
-            <div class="wrap">
-                <div class="card">
-                    <form action="" id="grades-form">
-                        <div class="card-header">
-                            <button type="submit" id="add-btn">
-                                <i class="fa-sharp fa-solid fa-plus"></i>
-                                <span>Nueva nota</span>
-                            </button>
-                        </div>
+            <form action="" id="grades-form">
+                <div class="title">
+                    <h3 style="font-size: 30px; font-weight: 500; padding: 1rem 0;">Bienvenido</h3>
+                    <div class="card-header">
+                        <button type="submit" id="add-btn">
+                            <i class="fa-sharp fa-solid fa-plus"></i>
+                            <span>Nueva nota</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="card">
                         <div class="card-body">
                             <label for="quantity" class="">Ingrese una nota:</label>
                             <div class="input-box" id="input-box"></div>
@@ -49,14 +49,14 @@
                                 <span>Calcular promedio</span>
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-                <div class="graphic">
-                    <canvas id="graphic" width="500" height="120"></canvas>
-                    <h4 style="margin-top: 1.5rem;" id="result"></h4>
+                    <div class="graphic">
+                        <canvas id="graphic" width="500" height="120"></canvas>
+                        <h4 style="margin-top: 1.5rem;" id="result"></h4>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <script src="app.js"></script>
