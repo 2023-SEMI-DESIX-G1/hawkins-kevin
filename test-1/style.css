@@ -1,0 +1,181 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: #071826;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.form-group{
+    margin: 1rem 0;
+    flex-direction: column;
+    display: flex;
+}
+
+.my-1 {
+    margin: 1rem 0;
+}
+
+
+.my-2{
+    margin: 1rem 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.mt-1{
+    margin-top: 0.5rem;
+}
+
+.mb-0 {
+    margin-bottom: 0.2rem;
+}
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.my-0 {
+    margin: 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-100 h5 {
+    font-weight: 700; 
+}
+
+.w-100 ul{
+    color: #4a4c4e;;
+    font-size: 13px;
+}
+
+.w-50 {
+    width: 45%;
+}
+
+.w-50 h5 {
+    font-weight: 700;
+}
+
+.eye {
+    margin: 0 0.5rem;
+    font-size: 15px !important;
+}
+
+.w-50 ul{
+    color: #4a4c4e;;
+    padding: 0 1rem;
+    font-size: 13px;
+}
+
+.w-50 p {
+    color: #4a4c4e;;
+    font-size: 13px;
+}
+
+.w-100 ul{
+    color: #4a4c4e;;
+    padding: 0 1rem;
+}
+.card{
+    width: 48%;
+    padding: 2rem;
+    border-radius: 5px;
+    background: #ffff;   
+}
+
+.card span {
+    color: #6c757d;
+}
+
+.card-body{
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.card-body div {
+    /* background-color: pink; */
+    margin: 0.5rem;
+}
+
+.removeBackImg{
+    margin-left: -35px;
+    margin-top: -20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.poke-title{
+    padding: 0;
+    position: absolute;
+}
+
+.form-group input {
+    width: 250px;
+    margin: 0;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.form-group select {
+    width: 270px;
+    background: #ffff;
+    padding: 0.5rem 0.6rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.form-group label, input {
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+.justify-content-start {
+    justify-content: start;
+}
+
+.form-group button{
+    width: 120px;
+    margin: 0.8rem 0;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background: rgb(0, 132, 255);
+    font-weight: 600;
+    color: #ffff;
+}
+
+@media only screen and (min-width: 1920px) {
+    .card {
+        width: 34%;
+    }
+
+}
