@@ -1,5 +1,4 @@
 (()=> {
-    var countClick = 0;
     const App = {
         htmlElements: {
             cleanBtn: document.getElementById("cleanBtn"),
@@ -30,16 +29,14 @@
                 document.getElementById("pokeForm").reset();
             },
 
-            searchPokemonApi(){
+            searchPokemonApi(){ 
                 const inputValue = document.getElementById("name").value;
                 const selectValue = document.getElementById("select").value;
                 console.log('SEARCHING', inputValue, ' | ', selectValue);
                 if(inputValue == '' || selectValue == ''){
                     window.alert('¡Por favor ingrese los campos para continuar!')
                 }else{
-                    countClick++;
                     var chainList = [];
-                    console.log('CONTEO: ', countClick);
                     if(selectValue === 'name'){
                         fetch(`https://pokeapi.co/api/v2/pokemon/${inputValue}`)
                         .then(response => response.json())
@@ -155,6 +152,7 @@
                             console.error('Error:', error);
                         });
                     }
+                    countClick++;
                 }
             }
         },
