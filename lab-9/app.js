@@ -1,20 +1,27 @@
 const express = require("express");
+const { pokemon } = require("./utils");
+const { get } = require("./remote");
 const axios = require('axios');
 const app = express();
 
-const PORT = 3000;
-let pokeName;
-
 app.get("/", function (req, res) {
-  res.json({
-    message: "Laboratorio #8",
-  });
+    res.json({
+      message: "Laboratorio #9",
+    });
 });
 
-app.get("/:pokemon", function (req, res) {
-  pokeName = req.params.pokemon;   
-  //Calling POKE API
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
+app.get("/cache", async (req, res) => {
+    console.log('CACHE');
+    res.json(pokemon.getCache());
+});
+
+  
+app.get("/:id", async (req, res) => {
+    console.log('INFO: ', req.params);
+    const { id } = req.params;  
+    const response = await pokemon.get(id);
+    if(response == undefined){
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(response => {
             const responseData = response.data;
             const body = {
@@ -61,7 +68,7 @@ app.get("/:pokemon", function (req, res) {
                                     evolvesTo = null;
                                 }
                             }
-                            console.log('POKEMON = ', body);
+                            // console.log('POKEMON = ', body);
                             res.json(body);
                         })
                         .catch(error => {
@@ -92,9 +99,11 @@ app.get("/:pokemon", function (req, res) {
                 });
             }
         }
-    );
+        );
+    }
+    res.json(response);
 });
 
-app.listen(PORT, () => {
-  console.log(`SERVE ON PORT: ${PORT}.`);
+app.listen(3000, () => {
+  console.log(`SERVE ON PORT: ${3000}`);
 });
